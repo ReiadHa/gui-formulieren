@@ -3,10 +3,9 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import *
 check = True
+
 def Time():
     global tijd,pts,label,check
-    print('timeeeeeee')
-    print(check)
     timer = tk.Label(text=f'Time Remaining {tijd}',fg='white',bg='black',width=30)   
     timer.place(relx=0.20, rely=0, anchor='n')  
     if tijd != 0:
