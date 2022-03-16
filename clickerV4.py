@@ -39,24 +39,20 @@ def Dclick(event):
     lab.config(textvariable=labstr)
 def autoClicker():
     global c1,keer,number,lab,var1
-
     if var1.get() == 1: 
         if soort == 1 :
-            win.after(5000,autoClicker)
             print('test1')
             number += 1
         elif soort == 2 :
             print('test2')
-            win.after(5000,autoClicker)
             number -= 1    
         elif soort == 3:
             print('test 3')
-            win.after(5000,autoClicker)
             number = number * 3        
         elif soort == 4:
             print('test 4')
-            win.after(5000,autoClicker)
             number = number / 3
+    win.after(5000,autoClicker)
 
 
 
@@ -81,8 +77,9 @@ button1 = tk.Button(text='Up',width=20)
 button2 = tk.Button(text='Down',width=20)
 
 var1 = tk.IntVar() 
-c1 = tk.Checkbutton(win, text='AutoClicker',variable=var1, onvalue=1, offvalue=0, command=autoClicker)
+c1 = tk.Checkbutton(win, text='AutoClicker',variable=var1, onvalue=1, offvalue=0)
 c1.pack()
+autoClicker()
 
 button1.pack(side=tk.TOP)
 button2.pack(side=tk.BOTTOM)
