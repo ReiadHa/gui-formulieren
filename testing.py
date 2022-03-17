@@ -161,5 +161,5 @@ for r in range(10):
 
  
 
-# root.resizable(False,False)
+
 root.mainloop()
