@@ -2,22 +2,23 @@ import tkinter as tk
 from tkinter import *
 import tkinter
 
+root = tk.Tk()
+root.geometry("750x750")
+color = True
 
-window= tk.Tk()
-window.geometry('1920x1080')
-toggle = False
-for r in range(11):
-    for c in range(11):
-        tom = tkinter.Label()
-        tom.place(x= r*75 ,y = c*75)
-        if toggle :
-            tom.config(bg='white',width=50,height=50)
-        else:
-            tom.config(bg='black',width=50,height=50)
-        toggle = not toggle
-    toggle = not toggle
+for r in range(10):
+	for c in range(10):
+		label1 = tkinter.Label()
+		label1.place(x= c*75 ,y = r*75)
+		if color == True: 
+			label1.config(bg='black')
+		if color == False:
+			label1.config(bg='grey',)
+		color = not color
+		label1.config(width=10,height=5)
+	color = not color
+
+ 
 
 
-
-
-window.mainloop()
+root.mainloop()
