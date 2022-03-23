@@ -16,6 +16,8 @@ def popupmsg():
         clear_frame()
         punt = 20
         startup()
+    else:
+        window.destroy()
 
 def clear_frame():
     global lijst
