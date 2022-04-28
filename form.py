@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter.messagebox import showinfo
 from tkinter import ttk
-from string import ascii_letters
 import re   
 
  

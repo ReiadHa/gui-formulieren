@@ -2,6 +2,7 @@ import random
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import *
+
 check = True
 
 def Time():
@@ -33,7 +34,6 @@ def ptsScore():
     score = tk.Label(text =f'{pts} Points', bg='black',fg='white',width=20)
     score.place(relx=0.95, rely=0, anchor='ne')
    
-
 def keuze():
     global plek, press,clicks,mouse,label,randList,mouse
     randPlek = random.choice(plek)
@@ -76,8 +76,7 @@ def submit():
     seconds = int(secVar.get())
     print("amount of seconds : " , seconds)
     tijd = seconds
-
-    
+ 
 def entry():
     global sub_btn,entLabel,secVar,sec_entry
     entLabel = tk.Label(frame, text = 'Fill in the time duration of the game', font=('calibre',10, 'bold'))
@@ -103,7 +102,7 @@ def start():
 
 window = tk.Tk()
 window.geometry('300x300')
-window.config(bg='grey')
+window.resizable(False,False)
 
 frame = Frame(window)
 frame.pack(side="top", expand=True, fill="both")
@@ -118,10 +117,6 @@ clicks = {
     '<Triple-Button-1>' : 'Tripple Click',
 }
 plek  = [0.45,0.25,0.50,0.35,0.60]
-
-
-
-
 
 start()
 entry()

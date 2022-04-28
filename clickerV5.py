@@ -30,7 +30,8 @@ def clicker():
     lab.config(textvariable=labstr)
 def autocheck():
     global var1
-    var1.set(1)
+    c1.config(state='active')
+
 def Dclick(event):
     global number,soort,check1
     print('clicked')
@@ -39,6 +40,7 @@ def Dclick(event):
         soort = 3
         check1 = True
         autocheck()
+
     elif keer == False :
         print('test')
         number = number / 3
@@ -64,7 +66,7 @@ def autoClicker():
             print('test 4')
  
             number = number / 3
-    win.after(5000,autoClicker)
+    win.after(200,autoClicker)
 
 
 
@@ -82,6 +84,8 @@ number = 0
 win = tk.Tk()
 win.geometry('300x150')
 
+
+
 lab = tk.Label( text= f'{number:.0f}',width=20)
 lab.config(bg='white')
 lab.place(anchor='center',relx=0.5,rely = 0.5)
@@ -92,6 +96,9 @@ button2 = tk.Button(text='Down',width=20)
 var1 = tk.IntVar() 
 c1 = tk.Checkbutton(win, text='AutoClicker',variable=var1, onvalue=1, offvalue=0)
 c1.pack()
+
+c1.config(state='disabled')
+
 autoClicker()
 button1.pack(side=tk.TOP)
 button2.pack(side=tk.BOTTOM)
