@@ -12,9 +12,9 @@ for r in range(10):
 		if color == True: 
 			label1.config(bg='black')
 		if color == False:
-			label1.config(bg='grey',)
+			label1.config(bg='grey')
 		color = not color
 		label1.config(width=10,height=5)
 	color = not color
-
+root.resizable(False,False)
 root.mainloop()

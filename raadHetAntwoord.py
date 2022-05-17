@@ -29,9 +29,13 @@ def gok():
     bol = True
     for index in range(len(woord)):
         if woord[index] == lijst[index].get():
-            lijst[index].config(bg = 'green')
+            lijst[index].config(fg = 'green')
         elif lijst[index].get() in woord:
-            lijst[index].config(bg='orange')
+            lijst[index].config(fg='orange')
+            punt -= 2
+            bol = False
+        elif lijst[index].get() not in woord:
+            lijst[index].config(fg='red')
             punt -= 2
             bol = False
         else:
@@ -40,7 +44,7 @@ def gok():
     if bol == True:
         if len(woord) < 6:
             punt += 15
-            msg = messagebox.showinfo('Gewonnen!',f'Gefiliciteerd je hebt woord uitgeraad!\n jou punten zijn {punt}')
+            msg = messagebox.showinfo('Gewonnen!',f'Gefiliciteerd je hebt woord geraden!\n jou punten zijn {punt}')
             count.destroy()
             clear_frame()
             startup()
@@ -83,7 +87,7 @@ def raad():
             alles =[random.choice(ascii_lowercase) for i in range(4)] 
             alles.append(woord[B])
             random.shuffle(alles)
-            box1 = tk.Spinbox(frame)
+            box1 = tk.Spinbox(frame,state = 'readonly')
             box1.config(width=3)
             box1['values'] =[i for i in alles]
             box1.place(relx= rel, rely=0.3,anchor='center')
